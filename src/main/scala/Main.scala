@@ -27,7 +27,7 @@ class PublishFeedActor extends Actor {
     super.preStart()
     implicit val ctx: ExecutionContext = context.dispatcher
     context.system.scheduler.schedule(0.millisecond, 10.milliseconds) {
-      publishFeed(Feed(feedIdSeed, s"${feedIdSeed} subject!", "text"))
+      publishFeed(Feed(feedIdSeed, s"$feedIdSeed subject!", "text"))
       feedIdSeed += 1
     }
   }
